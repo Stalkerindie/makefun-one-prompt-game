@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ghost Dash — a tiny one-button arcade dodger</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-wrap">
+  <canvas id="game" width="480" height="640"></canvas>
+
+  <div id="hud">
+    <div id="score">SCORE <span id="score-val">0</span></div>
+    <div id="lives" aria-label="lives"></div>
+  </div>
+
+  <div id="start-screen" class="overlay">
+    <div class="ghost-logo" aria-hidden="true">
+      <svg viewBox="0 0 100 110" width="96" height="106">
+        <path d="M50 4 C24 4 10 24 10 52 L10 96 L24 84 L36 96 L50 84 L64 96 L76 84 L90 96 L90 52 C90 24 76 4 50 4 Z" fill="#fff"/>
+        <circle cx="36" cy="46" r="7" fill="#1a1033"/>
+        <circle cx="64" cy="46" r="7" fill="#1a1033"/>
+        <circle cx="38.5" cy="43.5" r="2.4" fill="#fff"/>
+        <circle cx="66.5" cy="43.5" r="2.4" fill="#fff"/>
+        <path d="M40 62 Q50 71 60 62" stroke="#1a1033" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="26" cy="58" rx="5" ry="3" fill="#ffb3d9" opacity="0.7"/>
+        <ellipse cx="74" cy="58" rx="5" ry="3" fill="#ffb3d9" opacity="0.7"/>
+      </svg>
+    </div>
+    <h1>GHOST DASH</h1>
+    <p class="tagline">A tiny one-button arcade dodger</p>
+    <p class="howto">Hold <b>SPACE</b> / <b>↑</b> or <b>touch &amp; hold</b> to fly up.<br>
+    Let go to swoop down. Dodge the bats, grab the stars!</p>
+    <button id="start-btn" class="big-btn">▶ &nbsp;START</button>
+    <p class="best">BEST: <span id="best-start">0</span></p>
+  </div>
+
+  <div id="gameover-screen" class="overlay hidden">
+    <h1 class="go-title">GAME OVER</h1>
+    <p class="go-score">SCORE <span id="final-score">0</span></p>
+    <p class="go-best">BEST: <span id="best-over">0</span> <span id="new-best" class="hidden">★ NEW BEST!</span></p>
+    <button id="restart-btn" class="big-btn">↻ &nbsp;PLAY AGAIN</button>
+    <p class="hint">or press ENTER</p>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
